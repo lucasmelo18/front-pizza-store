@@ -15,3 +15,14 @@ router.post('/', function(request, response){
     })
 })
 
+
+router.get('/', function(request, response){
+    Department.find().exec((err, deps) =>{
+        if(err){
+            response.status(500).send(err);
+        }
+        else{
+            response.status(200).send(deps);
+        }
+    })
+})
