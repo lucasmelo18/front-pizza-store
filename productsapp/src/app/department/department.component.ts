@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Department } from '../department';
 
 @Component({
   selector: 'app-department',
@@ -7,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentComponent implements OnInit {
 
+  depName: string = '';
+  departments: Department[] = [
+    {name: "teste", _id:"01"},
+    {name: "teste", _id:"01"},
+    {name: "teste", _id:"01"},
+    {name: "teste", _id:"01"},
+    {name: "teste", _id:"01"},
+    {name: "teste", _id:"01"}
+  ];
   constructor() { }
 
   ngOnInit() {

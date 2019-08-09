@@ -1,1 +1,30 @@
-<p>department works!</p>
+<mat-card fxFlex>
+    <mat-card-title>
+        Formulário de Área
+    </mat-card-title>
+    <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="space-between">
+            <mat-form-field>
+                <input matInput [(ngModel)]='depName'>
+                <mat-hint>Nome da área</mat-hint>
+            </mat-form-field>
+            <div fxLayout='row' fxLayoutAlign='end end'>
+                <button mat-button color="primary" (click)="save()">Salvar</button>
+                <button mat-button color="warn" (click)="cancel()">Cancelar</button>
+            </div>
+        </div>
+        <mat-list>
+            <h2 mat-subheader>Departamentos</h2>
+            <mat-list-item *ngFor='let item of departments'>
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <h3 mat-line>{{item.name}}</h3>
+                <button mat-icon-button color="warn" (click)="delete(item)">
+                    <mat-icon>Deletar</mat-icon>
+                </button>
+                <button mat-icon-button color="accent" (click)="edit(item)">
+                    <mat-icon>Editar</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
