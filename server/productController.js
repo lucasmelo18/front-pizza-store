@@ -27,5 +27,36 @@ router.get('/', function(req, res) {
     })
 })
 
+router.delete('/:id', async (req, res) => {
+    Product.deleteOne({_id: req.params.id}), (err) =>{
+        if(err){
+            res.status(500).send(err);
+        }
+        else{
+            res.status(200).send({});
+        }
+    }
+})
 
+router.patch('/:id', (req, res) => {
+    Product.findById(req.params.id, (err, prod) => {
+        if (err)
+            res.status(500).send(err);
+        else if (!prod)
+            res.status(404).send({});
+        else {
+            prod.name = req.body.name;
+            prod.price = req.body.price;
+            prod.stock = req.body.stock;
+            prod.departments = req.body.departments;
+            prod.save()
+                if(err){
+                    res.status(500).send(err);
+                }
+                else{
+                    res.status(200).send(prod);
+                }
+        }
+    })
+})
 module.exports = router;
