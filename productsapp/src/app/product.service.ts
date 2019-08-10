@@ -17,7 +17,8 @@ export class ProductService {
   constructor(
     private http: HttpClient,
     private departmentService: DepartmentService ) {
-      this.get().subscribe((prod) => console.log(prod))
+
+      this.get().subscribe((prods) => console.log(prods))
      }
 
   get(): Observable<Product[]> {
