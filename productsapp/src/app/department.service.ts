@@ -19,10 +19,6 @@ export class DepartmentService {
   get(): Observable<Department[]> {
     if (!this.loaded) {
       this.http.get<Department[]>(this.url)
-        .pipe( 
-          tap((deps) => console.log(deps)),
-          delay(1000)
-        )
         .subscribe(this.departmentsSubject$);
       this.loaded = true;
     }

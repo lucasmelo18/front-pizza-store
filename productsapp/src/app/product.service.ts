@@ -25,7 +25,6 @@ export class ProductService {
         this.http.get<Product[]>(this.url),
         this.deparmentService.get())
       .pipe(
-        tap(([products,departments]) => console.log(products, departments)),
         filter(([products,departments])=> products!=null && departments!=null),
         map(([products,departments])=> {
           for(let p of products) {
@@ -34,7 +33,6 @@ export class ProductService {
           }
           return products;
         }),
-        tap((products) => console.log(products))
       )
       .subscribe(this.productsSubject$);
 
