@@ -28,7 +28,7 @@ router.delete('/:id', async (req, res) => {
         let prods = await Product.find({departments: id}).exec();
         if (prods.length > 0) {
             res.status(500).send({
-                msg: 'Could not remove this department. You may have to fix its dependencies before.'
+                msg: 'Não foi possível remover esse funcionário, pois ele possui dependências.'
             })
         }
         else {

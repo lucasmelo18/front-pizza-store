@@ -58,6 +58,7 @@ export class ProductComponent implements OnInit {
       this.productsService.add(data)
         .subscribe();
     }
+    this.resetForm();
   }
   delete(p: Product) {
     this.productsService.del(p)
@@ -78,5 +79,9 @@ export class ProductComponent implements OnInit {
 
   notify(msg: string) {
     this.snackBar.open(msg, 'OK', { duration: 3000 })
+  }
+
+  resetForm(){
+    this.productForm.reset();
   }
 }
