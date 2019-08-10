@@ -14,7 +14,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class ProductComponent implements OnInit {
 
-  productFrom: FormGroup = this.fb.group({
+  productForm: FormGroup = this.fb.group({
     _id:[null],
     name: ['', [Validators.required]],
     stock: [0, [Validators.required, Validators.min(0)]],
