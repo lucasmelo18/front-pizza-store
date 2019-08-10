@@ -31,4 +31,16 @@ export class DepartmentService {
      return this.http.post<Department>(this.url, d)
      .pipe(tap((dep: Department) => this.departmentsSubjects.getValue().push(dep)))
   }
+
+  del(dep: Department) : Observable<any>{
+    return this.http.delete(`${this.url}/${dep._id}`)
+      .pipe(tap(()=>{
+        let departments = this.departmentsSubjects.getValue();
+        let indice = departments.findIndex(d=> d._id === dep._id);
+        
+        if(indice>=0){
+          departments.splice(indice,1);
+        }
+      }))
+  }
 }
