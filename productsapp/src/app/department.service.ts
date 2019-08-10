@@ -43,4 +43,16 @@ export class DepartmentService {
         }
       }))
   }
+
+  update(dep: Department): Observable<Department>{
+    return this.http.patch<Department>(`${this.url}/${dep._id}`, dep)
+            .pipe(tap((d) => {
+              let departments = this.departmentsSubjects.getValue();
+              let indice = departments.findIndex(d=> d._id === dep._id);
+              
+              if(indice>=0){
+                departments[indice].name = d.name;
+              }
+            }))
+  }
 }
