@@ -22,7 +22,6 @@ import { DepartmentComponent } from './department/department.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

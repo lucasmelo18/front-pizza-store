@@ -45,4 +45,23 @@ export class ProductComponent implements OnInit {
   ngOnDestroy(){
     this.unsubscribe.next();
   }
+
+  save(){
+    let data = this.productForm.value;
+    if (data._id != null) {
+      this.productsService.update(data)
+        .subscribe(        )
+    }
+    else {
+      this.productsService.add(data)
+        .subscribe();
+    }
+  }
+  delete(p: Product){
+
+  }
+
+  edit(p: Product){
+
+  }
 }

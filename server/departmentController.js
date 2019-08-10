@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Department = require('./department');
-var Product = require('./products');
+var Product = require('./product');
 
 router.post('/', function(req, res) {
    let d = new Department({ name: req.body.name });
@@ -55,4 +55,5 @@ router.patch('/:id', (req, res) => {
         }
     })
 })
+
 module.exports = router;

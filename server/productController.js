@@ -1,41 +1,39 @@
-var express = require('express');
-var router = express.Router();
-var Product = require('./products');
+let express = require('express');
+let router = express.Router();
+let Product = require('./product');
 
-router.post('/', function(req, res) {
-   let p = new Product({
+router.post('/', (req, res) => {
+    let p = new Product({
         name: req.body.name,
         price: req.body.price,
         stock: req.body.stock,
         departments: req.body.departments
     });
-
-   p.save((err, prod) => {
-        if (err)
+    p.save((err, prod) => {
+        if(err)
             res.status(500).send(err);
-        else
-            res.status(200).send(dep);
-   })
-})
-
-router.get('/', function(req, res) {
-    Product.find().exec((err, prods) => {
-         if (err)
-             res.status(500).send(err);
-         else
-             res.status(200).send(prods);
+        else    
+            res.status(200).send(prod);
     })
 })
 
-router.delete('/:id', async (req, res) => {
-    Product.deleteOne({_id: req.params.id}), (err) =>{
-        if(err){
+
+router.get('/', (req, res) => {
+    Product.find().exec((err, prods) => {
+        if(err)
             res.status(500).send(err);
-        }
-        else{
+        else    
+            res.status(200).send(prods);        
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    Product.deleteOne({_id: req.params.id}, (err) => {
+        if(err)
+            res.status(500).send(err);
+        else    
             res.status(200).send({});
-        }
-    }
+    })
 })
 
 router.patch('/:id', (req, res) => {
@@ -49,14 +47,15 @@ router.patch('/:id', (req, res) => {
             prod.price = req.body.price;
             prod.stock = req.body.stock;
             prod.departments = req.body.departments;
-            prod.save()
-                if(err){
-                    res.status(500).send(err);
-                }
-                else{
+            prod.save((err, prod)=>{
+                if (err)
+                    res.status(500).send(err);                
+                else
                     res.status(200).send(prod);
-                }
+            })
         }
     })
 })
+
+
 module.exports = router;
