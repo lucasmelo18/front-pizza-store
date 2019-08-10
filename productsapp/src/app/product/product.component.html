@@ -10,27 +10,28 @@
       <mat-form-field>
         <input matInput placeholder="Digite o sabor da pizza" formControlName="name">
       </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field>
+          <input matInput placeholder="Quantas pizzas estão prontas" formControlName="stock" type="number">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Valor da pizza" formControlName="price" type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Funcionários responsáveis" formControlName="departments" multiple>
+            <mat-select-trigger>
+              {{productForm.value.departments ? productForm.value.departments[0]?.name : ''}}
+              <span *ngIf="productForm.value.departments?.length > 1" class="additional-selection">
+                (+{{productForm.value.departments.length - 1}}
+                {{productForm.value.departments.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let dep of departments" [value]="dep">{{dep.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-      <mat-form-field>
-        <input matInput placeholder="Quantas pizzas estão prontas" formControlName="stock" type="number">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Valor da pizza" formControlName="price" type="number">
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-select placeholder="Funcionários responsáveis" formControlName="departments" multiple>
-          <mat-select-trigger>
-            {{productForm.value.departments ? productForm.value.departments[0]?.name : ''}}
-            <span *ngIf="productForm.value.departments?.length > 1" class="additional-selection">
-              (+{{productForm.value.departments.length - 1}}
-              {{productForm.value.departments.length === 2 ? 'outro' : 'outros'}})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let dep of departments" [value]="dep">{{dep.name}}</mat-option>
-        </mat-select>
-      </mat-form-field>
 
       <div fxLayout="row" fxLayoutAlign="end end">
         <button mat-button color="primary" fxFlex="10" type="submit">Salvar</button>

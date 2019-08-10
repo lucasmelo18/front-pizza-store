@@ -14,7 +14,7 @@ mongoose.connect(
     'mongodb://localhost:27017/http_app', 
     {useNewUrlParser: true});
 
-app.use('/areas', department_controller);
+app.use('/funcionarios', department_controller);
 app.use('/sabores', product_controller);
 
 app.listen(3000);

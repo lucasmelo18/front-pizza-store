@@ -9,7 +9,7 @@ import { tap, delay } from 'rxjs/operators';
 })
 export class DepartmentService {
 
-  readonly url = 'http://localhost:3000/areas';
+  readonly url = 'http://localhost:3000/funcionarios';
 
   private departmentsSubject$: BehaviorSubject<Department[]> = new BehaviorSubject<Department[]>(null);
   private loaded: boolean = false;
