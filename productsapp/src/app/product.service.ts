@@ -55,5 +55,17 @@ export class ProductService {
       )
 
   }
+  del(prod: Product): Observable<any>{
+    return this.http.delete(`${this.url}/${prod._id}`)
+              .pipe(
+                tap(()=>{
+                  let products = this.productsSubjects.getValue();
+                  let indice = products.findIndex(p => p._id === prod._id);
+                  if(indice>=0){
+                    products.splice(indice,1);
+                  }
+                })
+              )
+  }
 
 }
