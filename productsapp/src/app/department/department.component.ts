@@ -14,7 +14,7 @@ export class DepartmentComponent implements OnInit {
 
   depName: String = '';
   departments: Department[] = [];
-  private unsubscribe$: Subject<any> = new Subject();
+  private unsubscribes: Subject<any> = new Subject();
   depEdit: Department = null;
 
   constructor(
@@ -23,7 +23,7 @@ export class DepartmentComponent implements OnInit {
 
   ngOnInit() {
     this.departmentService.get() 
-      .pipe( takeUntil(this.unsubscribe$))
+      .pipe( takeUntil(this.unsubscribes))
       .subscribe((deps) => this.departments = deps);
   }
 
@@ -81,6 +81,6 @@ export class DepartmentComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.unsubscribe$.next();
+    this.unsubscribes.next();
   }
 }

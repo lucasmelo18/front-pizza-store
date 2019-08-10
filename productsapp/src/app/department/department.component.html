@@ -1,12 +1,12 @@
  <mat-card fxFlex>
     <mat-card-title>
-        Formulário de Área
+        Cadastro de equipe
     </mat-card-title>
     <mat-card-content>
         <div fxLayout="column" fxLayoutAlign="space-between">
             <mat-form-field>
                 <input autofocus matInput [(ngModel)]='depName' (keyup.enter)='save()'>
-                <mat-hint>Nome da área</mat-hint>
+                <mat-hint>Nome do funcionário</mat-hint>
             </mat-form-field>
             <div fxLayout='row' fxLayoutAlign='end end'>
                 <button mat-button color="primary" (click)="save()">Salvar</button>
@@ -14,9 +14,9 @@
             </div>
         </div>
         <mat-list>
-            <h2 mat-subheader>Departamentos</h2>
+            <h2 mat-subheader>Funcionários</h2>
             <mat-list-item *ngFor='let item of departments'>
-                <mat-icon mat-list-icon>folder</mat-icon>
+                <mat-icon mat-list-icon>people</mat-icon>
                 <h3 mat-line>{{item.name}}</h3>
                 <button mat-icon-button color="warn" (click)="delete(item)">
                     <mat-icon>delete</mat-icon>
