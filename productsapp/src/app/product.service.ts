@@ -4,6 +4,7 @@ import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
 import { DepartmentService } from './department.service';
 import { map, tap, filter } from 'rxjs/operators';
+import { Department } from './department';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,18 @@ export class ProductService {
       this.loaded = true;
     }
     return this.productsSubjects.asObservable();
+  }
+
+  add(prod: Product): Observable<Product>{
+    let departments = (prod.departments as Department[]).map(d=>d._id);
+    return this.http.post<Product>(this.url, {...prod, departments})
+      .pipe(
+        tap((p) =>{
+          this.productsSubjects.getValue()
+            .push({...prod, _id: p._id})
+        })
+      )
+
   }
 
 }
