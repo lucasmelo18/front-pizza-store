@@ -71,7 +71,7 @@ export class DepartmentComponent implements OnInit {
   delete(dep: Department) {
     this.departmentService.del(dep)
       .subscribe(
-        () => this.notify('Removido com sucesso!'),
+        () => this.notify('Funcionário removido com sucesso!'),
         (err) => this.notify(err.error.msg)
       )
   }
