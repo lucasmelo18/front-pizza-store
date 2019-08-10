@@ -33,10 +33,10 @@ export class DepartmentComponent implements OnInit {
         {name: this.depName, _id: this.depEdit._id})
         .subscribe(
           (dep) => {
-            this.notify('Atualizado com sucesso!');
+            this.notify('Funcionário atualizado com sucesso!');
           },
           (err) => {
-            this.notify('Error ao atualizar, tente novamente');
+            this.notify('Error ao atualizar o nome do funcionário, tente novamente');
             console.error(err);
           }
         )
@@ -47,7 +47,7 @@ export class DepartmentComponent implements OnInit {
         (dep) => {
           console.log(dep);
           
-          this.notify('Inserido com sucesso!');
+          this.notify('Funcionário inserido com sucesso!');
         },
         (err) => console.error(err))
     }

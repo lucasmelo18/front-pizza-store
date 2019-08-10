@@ -52,11 +52,11 @@ export class ProductComponent implements OnInit {
     let data = this.productForm.value;
     if (data._id != null) {
       this.productsService.update(data)
-        .subscribe()
+        .subscribe((p) =>this.notify("Pizza atualizada"))
     }
     else {
       this.productsService.add(data)
-        .subscribe();
+        .subscribe((p)=>this.notify("Pizza cadastrada no sistema"));
     }
     this.resetForm();
   }
@@ -64,10 +64,10 @@ export class ProductComponent implements OnInit {
     this.productsService.del(p)
       .subscribe(
         () => {
-          this.notify('Deletado com sucesso'),
+          this.notify('Pizza deletada com sucesso'),
           (err) => {
             console.error(err);
-            this.notify('Erro ao deletar, tente novamente')
+            this.notify('Erro ao deletar a pizza, tente novamente')
           }
         }
       )
