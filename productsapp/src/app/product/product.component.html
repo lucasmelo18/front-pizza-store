@@ -43,7 +43,7 @@
       <mat-list>
         <h3 mat-subheader>Pizzas</h3>
         <mat-list-item *ngFor="let prod of products">
-          <mat-icon mat-list-icon>pizza</mat-icon>
+          <mat-icon mat-list-icon>local_pizza</mat-icon>
           <h4 mat-line>{{prod.name}}</h4>
           <h4 mat-line>Valor: {{prod.price | currency:"R$ "}} - Estoque: {{prod.stock}}</h4>
           <mat-chip-list mat-line>
