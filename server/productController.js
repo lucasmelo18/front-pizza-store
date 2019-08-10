@@ -19,11 +19,11 @@ router.post('/', function(req, res) {
 })
 
 router.get('/', function(req, res) {
-    Department.find().exec((err, deps) => {
+    Product.find().exec((err, prods) => {
          if (err)
              res.status(500).send(err);
          else
-             res.status(200).send(deps);
+             res.status(200).send(prods);
     })
 })
 
