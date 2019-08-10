@@ -27,6 +27,7 @@ export class DepartmentComponent implements OnInit {
       .subscribe(
         (dep) =>{
           console.log(dep);
+          this.clearFields(); 
         },
         (err) => console.error(err)
       )

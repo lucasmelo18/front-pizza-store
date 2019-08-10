@@ -1,11 +1,11 @@
-<mat-card fxFlex>
+ <mat-card fxFlex>
     <mat-card-title>
         Formulário de Área
     </mat-card-title>
     <mat-card-content>
         <div fxLayout="column" fxLayoutAlign="space-between">
             <mat-form-field>
-                <input matInput [(ngModel)]='depName'>
+                <input autofocus matInput [(ngModel)]='depName' (keyup.enter)='save()'>
                 <mat-hint>Nome da área</mat-hint>
             </mat-form-field>
             <div fxLayout='row' fxLayoutAlign='end end'>
