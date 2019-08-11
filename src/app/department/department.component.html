@@ -1,4 +1,4 @@
-<mat-card fxFlex>
+<div>
   <mat-card-title>
     Cadastro de Funcionários
   </mat-card-title>
@@ -10,8 +10,8 @@
         <mat-hint>Digite o primeiro e último nome do Funcionário</mat-hint>
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="end end">
-        <button mat-button color="primary" (click)="save()">Salvar</button>
-        <button mat-button color="warn" (click)="cancel()">Cancelar</button>
+        <button  mat-flat-button color="primary" (click)="save()">Salvar</button>
+        <button  mat-button color="warn" (click)="cancel()">Cancelar</button>
       </div>
     </div>
 
@@ -34,4 +34,4 @@
       <div><em>Não existem funcionários cadastrados.</em></div>
     </ng-template>
   </mat-card-content>
-</mat-card>
+</div>

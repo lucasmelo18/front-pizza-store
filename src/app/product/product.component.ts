@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-product',
+  selector: 'pizzas',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })

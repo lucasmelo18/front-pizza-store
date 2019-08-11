@@ -1,0 +1,15 @@
+mat-toolbar.mat-toolbar.mat-accent.mat-toolbar-multiple-rows{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+section{
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    margin-top: 100px;
+    width: 100vw;
+}

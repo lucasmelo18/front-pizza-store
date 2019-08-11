@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-department',
+  selector: 'funcionarios',
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.css']
 })
@@ -32,7 +32,7 @@ export class DepartmentComponent implements OnInit {
       this.departmentService.update(
         {name: this.depName, _id: this.depEdit._id})
         .subscribe(
-          (dep) => {
+          () => {
             this.notify('Funcionário atualizado com sucesso!');
           },
           (err) => {
@@ -45,9 +45,7 @@ export class DepartmentComponent implements OnInit {
       this.departmentService.add({name: this.depName})
       .subscribe(
         (dep) => {
-          console.log(dep);
-          
-          this.notify('Funcionário inserido com sucesso!');
+          this.notify(`${dep.name} foi inserido com sucesso!`);
         },
         (err) => console.error(err))
     }
@@ -71,7 +69,7 @@ export class DepartmentComponent implements OnInit {
   delete(dep: Department) {
     this.departmentService.del(dep)
       .subscribe(
-        () => this.notify('Funcionário removido com sucesso!'),
+        (dep) => this.notify(`O funcionário foi removido com sucesso!`),
         (err) => this.notify(err.error.msg)
       )
   }
