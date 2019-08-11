@@ -19,3 +19,6 @@ Na **segunda coluna** da aplicação, o usuário pode `adicionar, remover e edit
 - Valor da Pizza
 - Quantidade em estoque
 - Qual é o funcionário responsável por esse sabor, já adicionado na primeira coluna 
+
+
+Para visualizar o código da API em nodeJS [clique aqui](https://github.com/lucasmelo18/api-pizza-store)
