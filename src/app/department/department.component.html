@@ -9,7 +9,7 @@
         <input matInput [(ngModel)]="depName" (keyup.enter)="save()">
         <mat-hint>Digite o primeiro e último nome do Funcionário</mat-hint>
       </mat-form-field>
-      <div fxLayout="row" fxLayoutAlign="end end">
+      <div class="div-button" fxLayout="row" fxLayoutAlign="space-around">
         <button  mat-flat-button color="primary" (click)="save()">Salvar</button>
         <button  mat-button color="warn" (click)="cancel()">Cancelar</button>
       </div>

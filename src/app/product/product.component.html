@@ -8,15 +8,15 @@
       <input type="hidden" formControlName="_id">
 
       <mat-form-field>
-        <input matInput placeholder="Digite o sabor da pizza" formControlName="name">
+        <input autocomplete="off" matInput placeholder="Digite o sabor da pizza" formControlName="name">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <mat-form-field>
-          <input matInput placeholder="Quantas pizzas estão prontas" formControlName="stock" type="number">
+          <input autocomplete="off" matInput placeholder="Quantas pizzas estão prontas" formControlName="stock" type="number">
         </mat-form-field>
   
         <mat-form-field>
-          <input matInput placeholder="Valor da pizza" formControlName="price" type="number">
+          <input autocomplete="off" matInput placeholder="Valor da pizza" formControlName="price" type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-select placeholder="Funcionários responsáveis" formControlName="departments" multiple>
@@ -45,7 +45,7 @@
         <h3 mat-subheader>Pizzas</h3>
         <mat-list-item *ngFor="let prod of products">
           <mat-icon mat-list-icon>local_pizza</mat-icon>
-          <h4 mat-line>{{prod.name}}</h4>
+          <h4 class="name-pizza" mat-line>{{prod.name}}</h4>
           <h4 mat-line>Valor: {{prod.price | currency:"R$ "}} - Estoque: {{prod.stock}}</h4>
           <mat-chip-list mat-line>
             <mat-chip *ngFor="let d of prod.departments">{{d.name}}</mat-chip>
