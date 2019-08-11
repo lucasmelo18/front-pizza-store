@@ -8,9 +8,9 @@
       <input type="hidden" formControlName="_id">
 
       <mat-form-field>
-        <input autocomplete="off" matInput placeholder="Digite o sabor da pizza" formControlName="name">
+        <input autocomplete="off" class="input-sabor" matInput placeholder="Digite o sabor da pizza" formControlName="name">
       </mat-form-field>
-      <div fxLayout="row" fxLayoutAlign="space-between">
+      <div class="div-numbers" fxLayout="row" fxLayoutAlign="space-between">
         <mat-form-field>
           <input autocomplete="off" matInput placeholder="Quantas pizzas estão prontas" formControlName="stock" type="number">
         </mat-form-field>
@@ -33,7 +33,7 @@
       </div>
 
 
-      <div fxLayout="row" fxLayoutAlign="end end">
+      <div fxLayout="row" fxLayoutAlign="space-around">
         <button  mat-flat-button color="primary" fxFlex="10" type="submit">Salvar</button>
         <button  mat-button color="warn" fxFlex="10" type="reset">Cancelar</button>
       </div>

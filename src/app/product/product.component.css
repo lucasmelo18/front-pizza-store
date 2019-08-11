@@ -3,3 +3,26 @@
     font-weight: 800;
     text-transform: uppercase;
 }
+form{
+    align-items: center !important;
+}
+
+form .mat-form-field:nth-child(2){
+    width: 90%;
+}
+.input-sabor{
+    width: 90%;
+}
+.div-numbers{
+    width: 90%;
+    justify-content: space-around !important;
+}
+
+@media(max-width: 1150px){
+    .div-numbers{
+        flex-direction: column !important;
+    }
+    form .mat-form-field:nth-child(2), .mat-form-field{
+        width: 100%;
+    }
+}

@@ -1,15 +1,43 @@
 mat-toolbar.mat-toolbar.mat-accent.mat-toolbar-multiple-rows{
-    position: fixed;
-    width: 100%;
-    top: 0;
+    background-color: red;
     left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 1000;
 }
 section{
     align-items: flex-start;
     display: flex;
-    justify-content: space-around;
     height: auto;
+    justify-content: space-around;
     margin-top: 100px;
     width: 100vw;
+}
+
+.container{
+    background-color: #e6e6e6;
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 500px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 48%;
+}
+
+
+@media(max-width: 1150px){
+    section{
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .container{
+        height: auto;
+        width: 90%;
+    }
+    .div-numbers{
+        flex-direction: column;
+    }
 }
