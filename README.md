@@ -1,6 +1,7 @@
 # Pizza Store
 ### Loja Virtual
-[Clique aqui](https://pizzastorelucas.herokuapp.com/) para ver a aplicação publicada.
+* [Clique aqui](https://pizzastorefront.herokuapp.com/) para ver a aplicação publicada.
+* [Clique aqui](https://pizzastoreapi.herokuapp.com/) para ver o json dos dados salvos, com os parâmetros: `/sabores` ou `/funcionarios`.
 
 ### Aplicação para cadastro de funcionários, e sabores de pizza.
 ---
@@ -11,6 +12,8 @@ Para o desenvolvimento foi utilizado:
 * Express
 * Mongodb
 * Material Design
+* Sass
+* Gulp TaskRunner
 
 ---
 
@@ -28,8 +31,9 @@ Baixe o repositório do front-end
 1 - git clone https://github.com/lucasmelo18/front-pizza-store
 2 - cd front-pizza-store
 3 - npm install
-4 - ng serve 
-5 - Acesse no seu navegador no endereço http://localhost:4200
+4 - gulp (construirá o css)
+5 - ng serve 
+6 - Acesse no seu navegador no endereço http://localhost:4200
 
 Baixe o repositório do back-end
 1 - git clone https://github.com/lucasmelo18/api-pizza-store
