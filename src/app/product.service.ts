@@ -11,7 +11,7 @@ import { Department } from './department';
 })
 export class ProductService {
 
-  readonly url = 'http://localhost:3000/sabores';
+  readonly url = 'https://pizzastoreapi.herokuapp.com/sabores';
   private productsSubject$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(null);
   private loaded: boolean = false;
 
