@@ -1,0 +1,37 @@
+@import 'variables';
+
+form{
+    align-items: $center;
+    .mat-form-field{
+        &:nth-child(2){
+            width: 90%;
+        }
+    }
+    .input-sabor{
+        width: 90%;
+    }
+}
+
+.name-pizza{
+    color: $vermelho;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.div-numbers{
+    width: 90%;
+    justify-content: $around;
+}
+@media(max-width: 1150px){
+    .div-numbers{
+        flex-direction: $column;
+    }
+    form{
+        .mat-form-field{
+            width: 100%;
+            &:nth-child(2){
+                width: 100%;
+            }
+        }  
+    } 
+}
